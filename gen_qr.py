@@ -15,7 +15,7 @@ import os
 import qrcode
 from qrcode.constants import ERROR_CORRECT_H
 
-LINK_MAC_DINH = "https://forms.gle/8RaEwBFjCUuddPsf6"
+LINK_MAC_DINH = "YOUR_URL_LINK"
 
 
 def _tao_qr(url: str, box_size: int, border: int) -> qrcode.QRCode:
