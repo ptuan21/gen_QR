@@ -1,15 +1,3 @@
-#!/usr/bin/env python3
-"""Tạo và quản lý mã QR cho một đường link (Tĩnh & Động).
-
-Hỗ trợ 3 định dạng (tự nhận theo đuôi file đầu ra):
-  - .png : ảnh raster (mức sửa lỗi cao, hợp dán/chia sẻ online)
-  - .svg : vector, nét vô hạn, in khổ lớn không vỡ
-  - .pdf : vector, sẵn sàng đem in
-
-Đối với mã QR Động, link bên trong mã QR sẽ dẫn tới một server chuyển hướng trung gian.
-Bạn có thể thay đổi link đích thực tế bất kỳ lúc nào qua dòng lệnh mà không phải in lại QR.
-"""
-
 import argparse
 import os
 import random
@@ -19,7 +7,7 @@ import sys
 import qrcode
 from qrcode.constants import ERROR_CORRECT_H
 
-# Import module quản lý database của chúng ta
+# Import module quản lý database 
 import db
 
 LINK_MAC_DINH = "YOUR_URL_LINK"
@@ -28,7 +16,7 @@ LINK_MAC_DINH = "YOUR_URL_LINK"
 def _tao_qr(url: str, box_size: int, border: int) -> qrcode.QRCode:
     qr = qrcode.QRCode(
         version=None,                      # tự chọn kích thước nhỏ nhất vừa dữ liệu
-        error_correction=ERROR_CORRECT_H,  # mức sửa lỗi cao nhất (~30%)
+        error_correction=ERROR_CORRECT_H,  
         box_size=box_size,
         border=border,
     )
