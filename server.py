@@ -1,12 +1,10 @@
 import sys
 from flask import Flask, redirect, abort, render_template_string
 
-# Import module quản lý database của chúng ta
 import db
 
 app = Flask(__name__)
 
-# Đảm bảo database đã được tạo và thiết lập bảng
 db.init_db()
 
 ERROR_TEMPLATE = """
