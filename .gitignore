@@ -1,0 +1,16 @@
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# SQLite Database
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Generated QR Images/Files
+*.png
+*.svg
+*.pdf
