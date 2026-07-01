@@ -138,13 +138,9 @@ def redirect_to_target(qr_id):
     redirect_info = db.get_redirect(qr_id)
     if not redirect_info:
         return render_template_string(ERROR_TEMPLATE, qr_id=qr_id), 404
-
-    # Tăng số lượt quét
     db.increment_clicks(qr_id)
 
     target_url = redirect_info["target_url"]
-
-    # Đảm bảo target_url có schema http hoặc https
     if not target_url.startswith(("http://", "https://")):
         target_url = "http://" + target_url
 
